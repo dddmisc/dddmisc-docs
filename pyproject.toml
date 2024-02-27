@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "dddmisc-docs"
+version = "0.1.0"
+description = ""
+authors = ["Vladislav Vorobyov <vladislav.vorobyov@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "dddmisc_docs"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dddmisc-domain = "^0.5.0"
+dddmisc-messagebus = "^0.6.0"
+dddmisc-handlers-collection = "^0.5.0"
+dddmisc-unit-of-work = "^0.3.0"
+mkdocs-material = "^9.5.11"
+mkdocstrings = {extras = ["python"], version = "^0.24.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

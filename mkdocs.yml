@@ -1,0 +1,51 @@
+site_name: DDDMisc
+
+repo_url: https://github.com/dddmisc/dddmisc
+repo_name: dddmisc/dddmisc
+
+theme:
+  name: "material"
+
+  features:
+    - content.code.copy
+    - content.code.select
+
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue grey
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - mkdocstrings
+  - search
+nav:
+  - "Get Started": index.md
+  - tutorial.md
+  - API reference:
+      - dddmisc-core: api-reference/dddmisc-core.md
+      - dddmisc-domain: api-reference/dddmisc-domain.md
+      - api-reference/dddmisc-messagebus.md
+      - api-reference/dddmisc-handlers-collection.md
+      - api-reference/dddmisc-unit-of-work.md
+      - api-reference/dddmisc-rabbitmq-events-transport.md
