@@ -1,4 +1,4 @@
-# DDDMisc
+# ![Get started](img/logo.svg)
 
 DDDMisc is a set of libraries that provide basic solutions
 for implementing domain-driven design methods
