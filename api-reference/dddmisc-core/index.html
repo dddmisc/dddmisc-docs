@@ -1,0 +1,5902 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../tutorial/">
+      
+      
+        <link rel="next" href="../dddmisc-domain/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+    
+    
+      
+        <title>dddmisc-core - DDDMisc</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#d3m.core" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DDDMisc" class="md-header__button md-logo" aria-label="DDDMisc" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DDDMisc
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              dddmisc-core
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dddmisc/dddmisc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dddmisc/dddmisc
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DDDMisc" class="md-nav__button md-logo" aria-label="DDDMisc" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DDDMisc
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dddmisc/dddmisc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dddmisc/dddmisc
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Быстрый старт
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            API reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    dddmisc-core
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    dddmisc-core
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.DomainName" class="md-nav__link">
+    <span class="md-ellipsis">
+      DomainName
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DomainName">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.DomainName.part_of" class="md-nav__link">
+    <span class="md-ellipsis">
+      part_of
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.MessageName" class="md-nav__link">
+    <span class="md-ellipsis">
+      MessageName
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.MessageType" class="md-nav__link">
+    <span class="md-ellipsis">
+      MessageType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.MessagebusEvents" class="md-nav__link">
+    <span class="md-ellipsis">
+      MessagebusEvents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessageMeta
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessageMeta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta.__domain_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __domain_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta.__message_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __message_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta.__type__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __type__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      load
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__domain_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __domain_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__message_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __message_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__payload__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __payload__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__reference__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __reference__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__timestamp__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __timestamp__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__type__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __type__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.to_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_dict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.to_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.AbstractCommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      AbstractCommand
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AbstractCommand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.AbstractCommand.__type__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __type__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.AbstractEvent" class="md-nav__link">
+    <span class="md-ellipsis">
+      AbstractEvent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AbstractEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.AbstractEvent.__type__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __type__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.UniversalMessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      UniversalMessage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IDefaultDependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDefaultDependency
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDefaultDependency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IDefaultDependency.set_defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_defaults
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IHandlersCollection" class="md-nav__link">
+    <span class="md-ellipsis">
+      IHandlersCollection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IHandlersCollection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IHandlersCollection.get_command_handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_command_handler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IHandlersCollection.get_event_handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_event_handlers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IEventsOfMessagebusManager" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEventsOfMessagebusManager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IEventsOfMessagebusManager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IEventsOfMessagebusManager.subscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      subscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IEventsOfMessagebusManager.unsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      unsubscribe
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessagesPublisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessagesPublisher
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessagesPublisher">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagesPublisher.handle_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      handle_message
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessagebus
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessagebus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.close" class="md-nav__link">
+    <span class="md-ellipsis">
+      close
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.get_context" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.include_collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      include_collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.is_closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_closed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.is_running" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_running
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.run_until_complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_until_complete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      stop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebusPolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessagebusPolicy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessagebusPolicy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebusPolicy.get_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_messagebus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebusPolicy.new_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_messagebus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebusPolicy.set_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_messagebus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IEntity" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEntity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IEntity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IEntity.__reference__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __reference__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IRootEntity" class="md-nav__link">
+    <span class="md-ellipsis">
+      IRootEntity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IRootEntity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IRootEntity.__domain_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __domain_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IRootEntity.__version__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __version__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IRootEntity.collect_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect_events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.get_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_messagebus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.get_running_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_running_messagebus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.new_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_messagebus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.set_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_messagebus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.get_messagebus_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_messagebus_policy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.set_messagebus_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_messagebus_policy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dddmisc-domain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dddmisc-domain
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dddmisc-messagebus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dddmisc-messagebus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dddmisc-handlers-collection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dddmisc-handlers-collection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dddmisc-unit-of-work/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dddmisc-unit-of-work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dddmisc-rabbitmq-events-transport/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    dddmisc-rabbitmq-events-transport
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.DomainName" class="md-nav__link">
+    <span class="md-ellipsis">
+      DomainName
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DomainName">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.DomainName.part_of" class="md-nav__link">
+    <span class="md-ellipsis">
+      part_of
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.MessageName" class="md-nav__link">
+    <span class="md-ellipsis">
+      MessageName
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.MessageType" class="md-nav__link">
+    <span class="md-ellipsis">
+      MessageType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.MessagebusEvents" class="md-nav__link">
+    <span class="md-ellipsis">
+      MessagebusEvents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessageMeta
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessageMeta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta.__domain_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __domain_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta.__message_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __message_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta.__type__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __type__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessageMeta.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      load
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__domain_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __domain_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__message_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __message_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__payload__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __payload__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__reference__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __reference__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__timestamp__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __timestamp__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.__type__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __type__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.to_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_dict
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessage.to_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      to_json
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.AbstractCommand" class="md-nav__link">
+    <span class="md-ellipsis">
+      AbstractCommand
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AbstractCommand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.AbstractCommand.__type__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __type__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.AbstractEvent" class="md-nav__link">
+    <span class="md-ellipsis">
+      AbstractEvent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AbstractEvent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.AbstractEvent.__type__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __type__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.UniversalMessage" class="md-nav__link">
+    <span class="md-ellipsis">
+      UniversalMessage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IDefaultDependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      IDefaultDependency
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IDefaultDependency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IDefaultDependency.set_defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_defaults
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IHandlersCollection" class="md-nav__link">
+    <span class="md-ellipsis">
+      IHandlersCollection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IHandlersCollection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IHandlersCollection.get_command_handler" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_command_handler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IHandlersCollection.get_event_handlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_event_handlers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IEventsOfMessagebusManager" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEventsOfMessagebusManager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IEventsOfMessagebusManager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IEventsOfMessagebusManager.subscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      subscribe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IEventsOfMessagebusManager.unsubscribe" class="md-nav__link">
+    <span class="md-ellipsis">
+      unsubscribe
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessagesPublisher" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessagesPublisher
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessagesPublisher">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagesPublisher.handle_message" class="md-nav__link">
+    <span class="md-ellipsis">
+      handle_message
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessagebus
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessagebus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.close" class="md-nav__link">
+    <span class="md-ellipsis">
+      close
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.get_context" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.include_collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      include_collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.is_closed" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_closed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.is_running" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_running
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.run_until_complete" class="md-nav__link">
+    <span class="md-ellipsis">
+      run_until_complete
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebus.stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      stop
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebusPolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      IMessagebusPolicy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IMessagebusPolicy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebusPolicy.get_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_messagebus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebusPolicy.new_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_messagebus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IMessagebusPolicy.set_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_messagebus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IEntity" class="md-nav__link">
+    <span class="md-ellipsis">
+      IEntity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IEntity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IEntity.__reference__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __reference__
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.IRootEntity" class="md-nav__link">
+    <span class="md-ellipsis">
+      IRootEntity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IRootEntity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IRootEntity.__domain_name__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __domain_name__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IRootEntity.__version__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __version__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d3m.core.IRootEntity.collect_events" class="md-nav__link">
+    <span class="md-ellipsis">
+      collect_events
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.get_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_messagebus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.get_running_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_running_messagebus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.new_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      new_messagebus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.set_messagebus" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_messagebus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.get_messagebus_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_messagebus_policy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d3m.core.set_messagebus_policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_messagebus_policy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h1 id="d3m.core" class="doc doc-heading">
+          <code>d3m.core</code>
+
+
+</h1>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.DomainName" class="doc doc-heading">
+          <code>DomainName</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>str</code></p>
+
+  
+      <p>DomainName class represents a domain name string. It extends the built-in <code>str</code> class and adds validation for domain name format.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.DomainName.part_of" href="#d3m.core.DomainName.part_of">part_of</a></code></td>
+          <td>
+                <code>Optional[<a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Gets the parent DomainName of a sub-domain.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>ValueError</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If the domain name contains disallowed symbols.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.DomainName.part_of" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">part_of</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Gets the parent DomainName of a sub-domain.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>Optional[<a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The parent DomainName instance or None if it's not a sub-domain.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.MessageName" class="doc doc-heading">
+          <code>MessageName</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>str</code></p>
+
+  
+      <p>Class representing a message name.  It extends the built-in <code>str</code> class and adds validation for message name format.</p>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>ValueError</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If the message name contains disallowed symbols.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.MessageType" class="doc doc-heading">
+          <code>MessageType</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>str</code>, <code><span title="enum.Enum">Enum</span></code></p>
+
+  
+      <p>This class represents different types of message.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="d3m.core.MessageType.COMMAND">COMMAND</span></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The command type.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.MessageType.EVENT">EVENT</span></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The event type.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.MessagebusEvents" class="doc doc-heading">
+          <code>MessagebusEvents</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code>str</code>, <code><span title="enum.Enum">Enum</span></code></p>
+
+  
+      <p>This class representing different events that can occur in a Messagebus.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="d3m.core.MessagebusEvents.BEFORE_RUN">BEFORE_RUN</span></code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Event triggered before running the Messagebus.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.MessagebusEvents.AFTER_RUN">AFTER_RUN</span></code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Event triggered after running the Messagebus.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.MessagebusEvents.BEFORE_STOP">BEFORE_STOP</span></code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Event triggered before stopping the Messagebus.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.MessagebusEvents.AFTER_STOP">AFTER_STOP</span></code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Event triggered after stopping the Messagebus.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.MessagebusEvents.BEFORE_CLOSE">BEFORE_CLOSE</span></code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Event triggered before closing the Messagebus.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.MessagebusEvents.AFTER_CLOSE">AFTER_CLOSE</span></code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Event triggered after closing the Messagebus.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IMessageMeta" class="doc doc-heading">
+          <code>IMessageMeta</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="abc.ABCMeta">ABCMeta</span></code></p>
+
+  
+      <p>This class is a metaclass for defining message classes.
+It is meant to be inherited by a message class definitions.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessageMeta.__domain_name__" href="#d3m.core.IMessageMeta.__domain_name__">__domain_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message domain. Should be of type DomainName.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessageMeta.__message_name__" href="#d3m.core.IMessageMeta.__message_name__">__message_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageName" href="#d3m.core.MessageName">MessageName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message. Should be of type MessageName.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessageMeta.__type__" href="#d3m.core.IMessageMeta.__type__">__type__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The type of the message. Should be of type MessageType.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessageMeta.load" href="#d3m.core.IMessageMeta.load">load</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Constructs a new message object.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessageMeta.__domain_name__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__domain_name__</span><span class="p">:</span> <span class="n">DomainName</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the domain name of the message.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>DomainName</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message domain.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessageMeta.__message_name__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__message_name__</span><span class="p">:</span> <span class="n">MessageName</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the name of the message.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>MessageName</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageName" href="#d3m.core.MessageName">MessageName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessageMeta.__type__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__type__</span><span class="p">:</span> <span class="n">MessageType</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the type of the message.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>MessageType</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The MessageType of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessageMeta.load" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">load</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">reference</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timestamp</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Constructs a new message object.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>payload</code></td>
+          <td>
+                <code>Union[<span title="typing.Mapping">Mapping</span>, str, bytes]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The payload of the message.
+Any of a dictionary, json string, or bytes.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reference</code></td>
+          <td>
+                <code>Optional[<span title="uuid.UUID">UUID</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The reference identifier of the message.
+If not provided, a new UUID will be generated.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timestamp</code></td>
+          <td>
+                <code>Optional[datetime]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The creation timestamp of the message.
+If not provided, the current time will be used.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>IMessage</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessage" href="#d3m.core.IMessage">IMessage</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The newly created message object.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IMessage" class="doc doc-heading">
+          <code>IMessage</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="abc.ABC">ABC</span></code></p>
+
+  
+      <p>Metaclass: <code>IMessageMeta</code></p>
+<p>Abstract base class for defining message objects.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessage.__domain_name__" href="#d3m.core.IMessage.__domain_name__">__domain_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the subject area.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessage.__message_name__" href="#d3m.core.IMessage.__message_name__">__message_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageName" href="#d3m.core.MessageName">MessageName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessage.__type__" href="#d3m.core.IMessage.__type__">__type__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The type of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessage.__reference__" href="#d3m.core.IMessage.__reference__">__reference__</a></code></td>
+          <td>
+                <code><span title="uuid.UUID">UUID</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The identifier of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessage.__timestamp__" href="#d3m.core.IMessage.__timestamp__">__timestamp__</a></code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The creation time of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessage.__payload__" href="#d3m.core.IMessage.__payload__">__payload__</a></code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The payload of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><span title="d3m.core.IMessage.load">load</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Constructs a new message object.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessage.to_dict" href="#d3m.core.IMessage.to_dict">to_dict</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns a JSON serializable dictionary of the payload.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessage.to_json" href="#d3m.core.IMessage.to_json">to_json</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns a JSON string representation of the payload.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessage.__domain_name__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__domain_name__</span><span class="p">:</span> <span class="n">DomainName</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the domain name of the message.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>DomainName</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message domain.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessage.__message_name__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__message_name__</span><span class="p">:</span> <span class="n">MessageName</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the name of the message.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>MessageName</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageName" href="#d3m.core.MessageName">MessageName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessage.__payload__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__payload__</span><span class="p">:</span> <span class="nb">dict</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the payload of the message
+Returns:
+    dict: The payload of the message.</p>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessage.__reference__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__reference__</span><span class="p">:</span> <span class="n">UUID</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the reference of the message.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>UUID</code></td>          <td>
+                <code><span title="uuid.UUID">UUID</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The reference of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessage.__timestamp__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__timestamp__</span><span class="p">:</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the creation time of the message</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="datetime.datetime">datetime</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>datetime.datetime: The creation of the message with timezone information.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IMessage.__type__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__type__</span><span class="p">:</span> <span class="n">MessageType</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the type of the message.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>MessageType</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The MessageType of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessage.to_dict" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">to_dict</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Converts the message's payload to a json-serializable dictionary.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>dict</code></td>          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary representation of the message's payload.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessage.to_json" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">to_json</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Converts the message's payload to a json string.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>str</code></td>          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A json string representation of the message's payload.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.AbstractCommand" class="doc doc-heading">
+          <code>AbstractCommand</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessage" href="#d3m.core.IMessage">IMessage</a></code>, <code><span title="abc.ABC">ABC</span></code></p>
+
+  
+      <p>This class represents an abstract command.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractCommand.__domain_name__" href="#d3m.core.IMessage.__domain_name__">__domain_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the subject area.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractCommand.__message_name__" href="#d3m.core.IMessage.__message_name__">__message_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageName" href="#d3m.core.MessageName">MessageName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractCommand.__type__" href="#d3m.core.AbstractCommand.__type__">__type__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The type of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractCommand.__reference__" href="#d3m.core.IMessage.__reference__">__reference__</a></code></td>
+          <td>
+                <code><span title="uuid.UUID">UUID</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The identifier of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractCommand.__timestamp__" href="#d3m.core.IMessage.__timestamp__">__timestamp__</a></code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The creation time of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractCommand.__payload__" href="#d3m.core.IMessage.__payload__">__payload__</a></code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The payload of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><span title="d3m.core.AbstractCommand.load">load</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Constructs a new message object.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractCommand.to_dict" href="#d3m.core.IMessage.to_dict">to_dict</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns a JSON serializable dictionary of the payload.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractCommand.to_json" href="#d3m.core.IMessage.to_json">to_json</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns a JSON string representation of the payload.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.AbstractCommand.__type__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__type__</span><span class="p">:</span> <span class="n">MessageType</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the type of the command.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>MessageType</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p><code>MessageType.COMMAND</code>.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.AbstractEvent" class="doc doc-heading">
+          <code>AbstractEvent</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessage" href="#d3m.core.IMessage">IMessage</a></code>, <code><span title="abc.ABC">ABC</span></code></p>
+
+  
+      <p>This class represents an abstract event.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractEvent.__domain_name__" href="#d3m.core.IMessage.__domain_name__">__domain_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the subject area.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractEvent.__message_name__" href="#d3m.core.IMessage.__message_name__">__message_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageName" href="#d3m.core.MessageName">MessageName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractEvent.__type__" href="#d3m.core.AbstractEvent.__type__">__type__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The type of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractEvent.__reference__" href="#d3m.core.IMessage.__reference__">__reference__</a></code></td>
+          <td>
+                <code><span title="uuid.UUID">UUID</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The identifier of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractEvent.__timestamp__" href="#d3m.core.IMessage.__timestamp__">__timestamp__</a></code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The creation time of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractEvent.__payload__" href="#d3m.core.IMessage.__payload__">__payload__</a></code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The payload of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><span title="d3m.core.AbstractEvent.load">load</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Constructs a new message object.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractEvent.to_dict" href="#d3m.core.IMessage.to_dict">to_dict</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns a JSON serializable dictionary of the payload.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.AbstractEvent.to_json" href="#d3m.core.IMessage.to_json">to_json</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns a JSON string representation of the payload.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.AbstractEvent.__type__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__type__</span><span class="p">:</span> <span class="n">MessageType</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the type of the command.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>MessageType</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>MessageType.EVENT.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.UniversalMessage" class="doc doc-heading">
+          <code>UniversalMessage</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="d3m.core.IMessage" href="#d3m.core.IMessage">IMessage</a></code></p>
+
+  
+      <p>A universal class for create domain's messages.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>full_message_name</code></td>
+          <td>
+                <code>str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The full name of the message, including the domain and name.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>message_type</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.MessageType" href="#d3m.core.MessageType">MessageType</a> | str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The type of the message, either as an instance of MessageType or a string representing the type.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>payload</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The payload of the message as a dictionary.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>reference</code></td>
+          <td>
+                <code><span title="uuid.UUID">UUID</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional. A UUID representing the reference of the message. If not provided, a new UUID will be generated.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>timestamp</code></td>
+          <td>
+                <code><span title="datetime.datetime">datetime</span> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional. The timestamp of the message. If not provided, the current time in UTC will be used.</p>
+            </div>
+          </td>
+          <td>
+                <code>None</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><span title="d3m.core.UniversalMessage.__domain_name__">__domain_name__</span></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The domain name of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.UniversalMessage.__message_name__">__message_name__</span></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.MessageName" href="#d3m.core.MessageName">MessageName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The name of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.UniversalMessage.__type__">__type__</span></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.MessageType" href="#d3m.core.MessageType">MessageType</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The type of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.UniversalMessage.__reference__">__reference__</span></code></td>
+          <td>
+                <code><span title="uuid.UUID">UUID</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The reference of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.UniversalMessage.__timestamp__">__timestamp__</span></code></td>
+          <td>
+                <code>datetime</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The timestamp of the message.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><span title="d3m.core.UniversalMessage.__payload__">__payload__</span></code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The payload of the message.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><span title="d3m.core.UniversalMessage.to_dict">to_dict</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns the payload of the message as a dictionary.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><span title="d3m.core.UniversalMessage.to_json">to_json</span></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returns the payload of the message as a JSON string.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+
+<p><strong>Examples:</strong></p>
+    <p><strong>Create command</strong></p>
+    <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">command</span> <span class="o">=</span> <span class="n">UniversalMessage</span><span class="p">(</span><span class="s1">&#39;custom-domain.subdomain.CommandName&#39;</span><span class="p">,</span> <span class="s1">&#39;command&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;arg1&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">})</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">command</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">UniversalMessage(&quot;custom-domain.subdomain.CommandName&quot;, &lt;MessageType.COMMAND: &#39;COMMAND&#39;&gt;, {&#39;arg1&#39;: 123}, UUID(&#39;a19019fc-5e55-4b4c-9620-4e1cbf01e73a&#39;), datetime.datetime(2024, 2, 14, 11, 58, 5, 244542, tzinfo=datetime.timezone.utc)))</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">AbstractCommand</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">command</span><span class="o">.</span><span class="n">__domain_name__</span> <span class="o">==</span> <span class="s1">&#39;custom-domain.subdomain&#39;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">command</span><span class="o">.</span><span class="n">__message_name__</span> <span class="o">==</span> <span class="s1">&#39;CommandName&#39;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">command</span><span class="o">.</span><span class="n">__type__</span> <span class="o">==</span> <span class="n">MessageType</span><span class="o">.</span><span class="n">COMMAND</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">command</span><span class="o">.</span><span class="n">__payload__</span> <span class="o">==</span> <span class="nb">dict</span><span class="p">(</span><span class="n">arg1</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">__reference__</span><span class="p">,</span> <span class="n">UUID</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">__timestamp__</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">command</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">&#39;{&quot;arg1&quot;: 123}&#39;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">command</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">{&#39;arg1&#39;: 123}</span>
+</span></code></pre></div>
+    <p><strong>Create event</strong></p>
+    <div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span> <span class="o">=</span> <span class="n">UniversalMessage</span><span class="p">(</span><span class="s1">&#39;custom-domain.subdomain.EventName&#39;</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;arg&#39;</span><span class="p">:</span> <span class="s2">&quot;abc&quot;</span><span class="p">})</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">UniversalMessage(&quot;custom-domain.subdomain.EventName&quot;, &lt;MessageType.EVENT: &#39;EVENT&#39;&gt;, {&#39;arg1&#39;: 123}, UUID(&#39;a19019fc-5e55-4b4c-9620-4e1cbf01e73a&#39;), datetime.datetime(2024, 2, 14, 11, 58, 5, 244542, tzinfo=datetime.timezone.utc)))</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">AbstractEvent</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">event</span><span class="o">.</span><span class="n">__domain_name__</span> <span class="o">==</span> <span class="s1">&#39;custom-domain.subdomain&#39;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">event</span><span class="o">.</span><span class="n">__message_name__</span> <span class="o">==</span> <span class="s1">&#39;EventName&#39;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">event</span><span class="o">.</span><span class="n">__type__</span> <span class="o">==</span> <span class="n">MessageType</span><span class="o">.</span><span class="n">EVENT</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">event</span><span class="o">.</span><span class="n">__payload__</span> <span class="o">==</span> <span class="nb">dict</span><span class="p">(</span><span class="n">arg1</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">__reference__</span><span class="p">,</span> <span class="n">UUID</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">__timestamp__</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="go">&#39;{&quot;arg&quot;: &quot;abc&quot;}&#39;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">event</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="go">{&#39;arg&#39;: &#39;abc&#39;}</span>
+</span></code></pre></div>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IDefaultDependency" class="doc doc-heading">
+          <code>IDefaultDependency</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="abc.ABC">ABC</span></code></p>
+
+  
+      <p>Abstract class for setting default dependencies for domain command handlers.</p>
+<p>This class provides a method <code>set_defaults</code> that allows users to set default dependencies for command handlers associated with a specific domain.</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IDefaultDependency.set_defaults" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_defaults</span><span class="p">(</span><span class="n">__domain</span><span class="p">,</span> <span class="o">**</span><span class="n">defaults</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set defaults dependencies for domain command handlers</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>__domain</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a> | str</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**defaults</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IHandlersCollection" class="doc doc-heading">
+          <code>IHandlersCollection</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IDefaultDependency" href="#d3m.core.IDefaultDependency">IDefaultDependency</a></code>, <code><span title="abc.ABC">ABC</span></code></p>
+
+  
+      <p>IHandlersCollection is an abstract base class that defines the interface for a collection of message handlers.</p>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IHandlersCollection.get_command_handler" href="#d3m.core.IHandlersCollection.get_command_handler">get_command_handler</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Get the registered handler for a command.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IHandlersCollection.get_event_handlers" href="#d3m.core.IHandlersCollection.get_event_handlers">get_event_handlers</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Get the registered handlers for commands caused by an event.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IHandlersCollection.get_command_handler" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_command_handler</span><span class="p">(</span><span class="n">__command</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">**</span><span class="n">dependencies</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get registered command's handler for the command</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>__command</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.AbstractCommand" href="#d3m.core.AbstractCommand">AbstractCommand</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>domain's command object</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dependencies</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>dependencies for command's handler</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.Callable">Callable</span>[[], <span title="typing.Coroutine">Coroutine</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Callable[[], Coroutine]: command's handler.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IHandlersCollection.get_event_handlers" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_event_handlers</span><span class="p">(</span><span class="n">__event</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">**</span><span class="n">dependencies</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get registered command's handlers for commands caused to event</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>__event</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.AbstractEvent" href="#d3m.core.AbstractEvent">AbstractEvent</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>domain's event object</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>dependencies</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>dependencies for the event's handlers.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>tuple[<span title="typing.Callable">Callable</span>[[], <span title="typing.Coroutine">Coroutine</span>], ...]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>event's handlers</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IEventsOfMessagebusManager" class="doc doc-heading">
+          <code>IEventsOfMessagebusManager</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="abc.ABC">ABC</span></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IEventsOfMessagebusManager.subscribe" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">subscribe</span><span class="p">(</span><span class="o">*</span><span class="n">events</span><span class="p">,</span> <span class="n">listener</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Subscribe a listener to one or more events of messagebus</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>*events</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessagebusEvents" href="#d3m.core.MessagebusEvents">MessagebusEvents</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A variable number of MessagebusEvents objects representing the events
+that the listener will subscribe to.</p>
+            </div>
+          </td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>listener</code></td>
+          <td>
+                <code><span title="typing.Callable">Callable</span>[[<a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebus" href="#d3m.core.IMessagebus">IMessagebus</a>, <a class="autorefs autorefs-internal" title="d3m.core.types.MessagebusEvents" href="#d3m.core.MessagebusEvents">MessagebusEvents</a>], <span title="typing.Coroutine">Coroutine</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A callable object that takes two arguments:
+    1. An instance of the IMessagebus interface.
+    2. A MessagebusEvents object representing the event that occurred.
+This callable object should return a coroutine.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IEventsOfMessagebusManager.unsubscribe" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">unsubscribe</span><span class="p">(</span><span class="o">*</span><span class="n">events</span><span class="p">,</span> <span class="n">listener</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Unsubscribe a listener from one or more events.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>*events</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.MessagebusEvents" href="#d3m.core.MessagebusEvents">MessagebusEvents</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>One or more events to unsubscribe the listener from.</p>
+            </div>
+          </td>
+          <td>
+                <code>()</code>
+          </td>
+        </tr>
+        <tr>
+          <td><code>listener</code></td>
+          <td>
+                <code><span title="typing.Callable">Callable</span>[[<a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebus" href="#d3m.core.IMessagebus">IMessagebus</a>, <a class="autorefs autorefs-internal" title="d3m.core.types.MessagebusEvents" href="#d3m.core.MessagebusEvents">MessagebusEvents</a>], <span title="typing.Coroutine">Coroutine</span>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The listener to unsubscribe from the events.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IMessagesPublisher" class="doc doc-heading">
+          <code>IMessagesPublisher</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="abc.ABC">ABC</span></code></p>
+
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagesPublisher.handle_message" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">handle_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">**</span><span class="n">dependencies</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Handles a message and returns a future representing the completion of the message handling.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>message</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessage" href="#d3m.core.IMessage">IMessage</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The message to be handled. Must implement the <code>IMessage</code> interface.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**dependencies</code></td>
+          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional dependencies required for handling the message.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="asyncio.Future">Future</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>asyncio.Future: An asyncio future representing the completion of the message handling.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IMessagebus" class="doc doc-heading">
+          <code>IMessagebus</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagesPublisher" href="#d3m.core.IMessagesPublisher">IMessagesPublisher</a></code>, <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IEventsOfMessagebusManager" href="#d3m.core.IEventsOfMessagebusManager">IEventsOfMessagebusManager</a></code>, <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IDefaultDependency" href="#d3m.core.IDefaultDependency">IDefaultDependency</a></code>, <code><span title="abc.ABC">ABC</span></code></p>
+
+  
+      <p>Represents the interface for a message bus.</p>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.subscribe" href="#d3m.core.IEventsOfMessagebusManager.subscribe">subscribe</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Subscribe a listener to one or more events of the message bus.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.unsubscribe" href="#d3m.core.IEventsOfMessagebusManager.unsubscribe">unsubscribe</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unsubscribe a listener from one or more events of the message bus.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.run" href="#d3m.core.IMessagebus.run">run</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Run the message bus.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.run_until_complete" href="#d3m.core.IMessagebus.run_until_complete">run_until_complete</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Run the message bus until the execution of a specified command.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.stop" href="#d3m.core.IMessagebus.stop">stop</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Stop the message bus.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.close" href="#d3m.core.IMessagebus.close">close</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Close the message bus.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.is_running" href="#d3m.core.IMessagebus.is_running">is_running</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Check if the message bus is running.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.is_closed" href="#d3m.core.IMessagebus.is_closed">is_closed</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Check if the message bus is closed.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.include_collection" href="#d3m.core.IMessagebus.include_collection">include_collection</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Include a collection of handlers in the message bus.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.handle_message" href="#d3m.core.IMessagesPublisher.handle_message">handle_message</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Handle a message and return a future representing the completion of the handling.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.get_context" href="#d3m.core.IMessagebus.get_context">get_context</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Get the context of the current instance.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebus.set_defaults" href="#d3m.core.IDefaultDependency.set_defaults">set_defaults</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Set defaults for the domain's command's handlers.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebus.close" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">close</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Close the messagebus.
+This method blocked handle any message to messagebus.
+This method should call before-close and after-close events subscribed listeners.</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebus.get_context" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_context</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get the context of the current instance.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>Context</code></td>          <td>
+                <code><span title="d3m.core.abstractions.Context">Context</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The context of the current environment.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebus.include_collection" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">include_collection</span><span class="p">(</span><span class="n">collection</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Include a collection of handlers.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>collection</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IHandlersCollection" href="#d3m.core.IHandlersCollection">IHandlersCollection</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>An instance of the IHandlersCollection class that contains a collection of handlers.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebus.is_closed" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">is_closed</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Checks if the messagebus is closed.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>bool</code></td>          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>True if the messagebus is closed, False otherwise.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebus.is_running" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">is_running</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Check if the messagebus is running.</p>
+<p>This method returns a boolean value indicating whether the messagebus is currently running.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>bool</code></td>          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>True if the messagebus is running, False otherwise.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebus.run" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Run the messagebus.
+This method calls before-run and after-run events subscribed listeners.
+This method should be idempotent behaviour.</p>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>RuntimeError</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>if messagebus is closed.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebus.run_until_complete" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">run_until_complete</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="o">**</span><span class="n">dependencies</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Runs the messagebus until given command's handler execution.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>command</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.AbstractCommand" href="#d3m.core.AbstractCommand">AbstractCommand</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A IMessage object representing the command to be executed.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>**dependencies</code></td>
+          <td>
+                <code><span title="typing.Any">Any</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Additional dependencies that may be required by the command.</p>
+            </div>
+          </td>
+          <td>
+                <code>{}</code>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>Any</code></td>          <td>
+                <code><span title="typing.Any">Any</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The result of the command execution, which may vary depending on the command.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebus.stop" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">stop</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Stops the messagebus.
+This method blocked handle the message to messagebus,
+exclude the messages generated by current messages handlers.
+Stops the current operation.
+This method should call before-stop and after-stop events subscribed listeners.
+This method should be idempotent call behaviour.
+This method return after finished all messages handlers.</p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IMessagebusPolicy" class="doc doc-heading">
+          <code>IMessagebusPolicy</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="abc.ABC">ABC</span></code></p>
+
+  
+      <p>This class represents an abstract policy interface for managing messagebus in a system.</p>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebusPolicy.get_messagebus" href="#d3m.core.IMessagebusPolicy.get_messagebus">get_messagebus</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Get the messagebus for the current context.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebusPolicy.set_messagebus" href="#d3m.core.IMessagebusPolicy.set_messagebus">set_messagebus</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Set the messagebus for the current context.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IMessagebusPolicy.new_messagebus" href="#d3m.core.IMessagebusPolicy.new_messagebus">new_messagebus</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Create and return a new messagebus object, according to this policy's rules.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebusPolicy.get_messagebus" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_messagebus</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Get or create a messagebus for current context.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>IMessagebus</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebus" href="#d3m.core.IMessagebus">IMessagebus</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The messagebus for current context</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebusPolicy.new_messagebus" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">new_messagebus</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Create and return a new messagebus object according to this
+policy's rules. If there's need to set this messagebus as the messagebus for
+the current context, <code>set_messagebus</code> must be called explicitly.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>IMessagebus</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebus" href="#d3m.core.IMessagebus">IMessagebus</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The new messagebus instance</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IMessagebusPolicy.set_messagebus" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_messagebus</span><span class="p">(</span><span class="n">messagebus</span><span class="p">)</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set the messagebus for the current context.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>messagebus</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebus" href="#d3m.core.IMessagebus">IMessagebus</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The messagebus for set to current context.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IEntity" class="doc doc-heading">
+          <code>IEntity</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="abc.ABC">ABC</span></code>, <code><span title="typing.Generic">Generic</span>[<span title="d3m.core.abstractions._ReferenceType">_ReferenceType</span>]</code></p>
+
+  
+      <p>Abstract base class for all entity classes.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IEntity.__reference__" href="#d3m.core.IEntity.__reference__">__reference__</a></code></td>
+          <td>
+                <code><span title="d3m.core.abstractions._ReferenceType">_ReferenceType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Property that represents the reference of the entity.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IEntity.__reference__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__reference__</span><span class="p">:</span> <span class="n">_ReferenceType</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Property that represents the reference of the entity.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="d3m.core.abstractions._ReferenceType">_ReferenceType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>entity reference</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="d3m.core.IRootEntity" class="doc doc-heading">
+          <code>IRootEntity</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+          <p class="doc doc-class-bases">
+            Bases: <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IEntity" href="#d3m.core.IEntity">IEntity</a>[<span title="d3m.core.abstractions._ReferenceType">_ReferenceType</span>]</code>, <code><span title="abc.ABC">ABC</span></code>, <code><span title="typing.Generic">Generic</span>[<span title="d3m.core.abstractions._ReferenceType">_ReferenceType</span>]</code></p>
+
+  
+      <p>This class represents an abstract root entity in a domain-driven design architecture.
+It is a base class for all root entities in the domain.</p>
+
+
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IRootEntity.__reference__" href="#d3m.core.IEntity.__reference__">__reference__</a></code></td>
+          <td>
+                <code><span title="d3m.core.abstractions._ReferenceType">_ReferenceType</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Property that represents the reference of the root entity.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IRootEntity.__version__" href="#d3m.core.IRootEntity.__version__">__version__</a></code></td>
+          <td>
+                <code><span title="d3m.core.abstractions.Version">Version</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Property that represents the version of the root entity.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code><a class="autorefs autorefs-internal" title="d3m.core.IRootEntity.__domain_name__" href="#d3m.core.IRootEntity.__domain_name__">__domain_name__</a></code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Property that represents the domain name of the root entity.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Methods:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td><code><a class="autorefs autorefs-internal" title="d3m.core.IRootEntity.collect_events" href="#d3m.core.IRootEntity.collect_events">collect_events</a></code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Collects domain events from the root entity and removes them after the call.</p>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IRootEntity.__domain_name__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__domain_name__</span><span class="p">:</span> <span class="n">DomainName</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Represents the domain name of the root entity.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>DomainName</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.types.DomainName" href="#d3m.core.DomainName">DomainName</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>entity domain</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h3 id="d3m.core.IRootEntity.__version__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">__version__</span><span class="p">:</span> <span class="n">Version</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Property that represents the version of the root entity.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>Version</code></td>          <td>
+                <code><span title="d3m.core.abstractions.Version">Version</span></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>root entity version</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="d3m.core.IRootEntity.collect_events" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">collect_events</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-abstractmethod"><code>abstractmethod</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Collects domain events from the root entity and removes them after the call.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code><span title="typing.Iterable">Iterable</span>[<a class="autorefs autorefs-internal" title="d3m.core.abstractions.AbstractEvent" href="#d3m.core.AbstractEvent">AbstractEvent</a>]</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>Iterable[IMessage]: domain events</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+
+</div>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="d3m.core.get_messagebus" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_messagebus</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the current IMessagebus instance.</p>
+<p>If there is a running IMessagebus instance, it returns that instance.
+Otherwise, it retrieves the IMessagebus instance using the get_messagebus method from the message bus policy.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>IMessagebus</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebus" href="#d3m.core.IMessagebus">IMessagebus</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The current IMessagebus instance.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="d3m.core.get_running_messagebus" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_running_messagebus</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns the running instance of the messagebus.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>IMessagebus</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebus" href="#d3m.core.IMessagebus">IMessagebus</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The running instance of the messagebus.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>RuntimeError</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If there is no running messagebus instance.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="d3m.core.new_messagebus" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">new_messagebus</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Returns a new instance of the MessageBus class.</p>
+<p>This method retrieves the message bus policy using the get_messagebus_policy() function, and
+calls the new_messagebus() method of the policy to create a new message bus instance.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>IMessagebus</code></td>          <td>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A new instance of the MessageBus class.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="d3m.core.set_messagebus" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_messagebus</span><span class="p">(</span><span class="n">messagebus</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set the messagebus for the messagebus policy.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>messagebus</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebus" href="#d3m.core.IMessagebus">IMessagebus</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The message bus object to set.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="d3m.core.get_messagebus_policy" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">get_messagebus_policy</span><span class="p">()</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Retrieves the messagebus policy.</p>
+<p>If the message bus policy is not initialized, it will be initialized first.</p>
+
+
+
+  <p><strong>Returns:</strong></p>
+  <table>
+    <thead>
+      <tr>
+<th>Name</th>        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td><code>IMessagebusPolicy</code></td>          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebusPolicy" href="#d3m.core.IMessagebusPolicy">IMessagebusPolicy</a></code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>The messagebus policy.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h2 id="d3m.core.set_messagebus_policy" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">set_messagebus_policy</span><span class="p">(</span><span class="n">policy</span><span class="p">)</span></code>
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Set the messagebus policy.</p>
+
+
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>policy</code></td>
+          <td>
+                <code><a class="autorefs autorefs-internal" title="d3m.core.abstractions.IMessagebusPolicy" href="#d3m.core.IMessagebusPolicy">IMessagebusPolicy</a> | None</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>None</code>, no policy will be set. Otherwise, the specified <code>policy</code> will be set as the messagebus policy.</p>
+            </div>
+          </td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <p><strong>Raises:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+                <code>TypeError</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>If <code>policy</code> is not an instance of <code>IMessagebusPolicy</code> or <code>None</code>.</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+    
+  </body>
+</html>
